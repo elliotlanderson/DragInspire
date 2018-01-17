@@ -1,4 +1,4 @@
-<?php
+f<?php
 
 return [
 
@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', false),
+    'debug' => env('APP_DEBUG', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -165,8 +165,10 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         /*
-         * Package Service Providers...
+         * Third Party Package Service Providers...
          */
+        Barryvdh\Debugbar\ServiceProvider::class,
+        Zizaco\Entrust\EntrustServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -226,6 +228,11 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        /**
+         * Third Party Aliases
+         */
+        'Barryvdh' => Barryvdh\Debugbar\Facade::class,
+        'Entrust'  => Zizaco\Entrust\Facade::class
     ],
 
 ];
